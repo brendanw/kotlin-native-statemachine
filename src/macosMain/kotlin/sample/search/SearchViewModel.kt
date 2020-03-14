@@ -21,7 +21,7 @@ class SearchViewModel : CoroutineScope {
     }
 
   fun dispatchAction(action: Search.Action) {
-    searchStateMachine.dispatchAction(action)
+    searchStateMachine.dispatchAction.invoke(action)
   }
 
   fun clear() {
