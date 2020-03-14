@@ -1,11 +1,21 @@
 plugins {
-    //kotlin("multiplatform")
-    //id 'org.jetbrains.kotlin.multiplatform' version '1.3.70'
     id("org.jetbrains.kotlin.multiplatform").version("1.3.70")
 }
+
 repositories {
+    maven("https://jitpack.io")
+    maven("https://dl.bintray.com/kotlin/kotlinx")
+    maven("https://dl.bintray.com/kotlin/ktor")
+    maven("https://dl.bintray.com/sargunster/maven")
+    maven("https://dl.bintray.com/kotlin/squash")
+    maven("https://dl.bintray.com/kotlin/kotlin-dev")
+
+    mavenLocal()
     mavenCentral()
+    google()
+    jcenter()
 }
+
 kotlin {
     // For ARM, should be changed to iosArm32 or iosArm64
     // For Linux, should be changed to e.g. linuxX64
@@ -27,6 +37,11 @@ kotlin {
         val macosMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.4")
+                /*implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.3-native-mt") {
+                    version {
+                        strictly("1.3.3-native-mt")
+                    }
+                }*/
             }
         }
         val macosTest by getting {

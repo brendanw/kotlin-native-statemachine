@@ -1,9 +1,29 @@
 package sample
 
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.*
+import kotlinx.coroutines.channels.BroadcastChannel
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.channels.broadcast
+import kotlinx.coroutines.flow.*
+import platform.CoreServices.GetCurrentThread
 
-fun hello(): String = "Hello, Kotlin/Native!"
 
 fun main() {
-    println(hello())
+  runBlocking {
+    println("start")
+    SearchView()
+
+    while (true) {
+      delay(1000)
+    }
+  }
+}
+
+fun <T> Channel<T>.multicast(scope: CoroutineScope): BroadcastChannel<T> {
+  val channel = this
+  return scope.broadcast {
+    for (x in channel) {
+      offer(x)
+    }
+  }
 }
