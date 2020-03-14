@@ -4,8 +4,7 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.BroadcastChannel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.broadcast
-import kotlinx.coroutines.flow.*
-import platform.CoreServices.GetCurrentThread
+import sample.search.SearchView
 
 
 fun main() {

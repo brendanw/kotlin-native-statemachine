@@ -1,6 +1,11 @@
-package sample
+package sample.search
 
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import sample.flow.FlowRelay
+import sample.search.Search
+import sample.search.SearchStateMachine
 import kotlin.coroutines.CoroutineContext
 
 

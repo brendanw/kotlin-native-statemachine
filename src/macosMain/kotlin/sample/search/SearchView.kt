@@ -1,7 +1,10 @@
-package sample
+package sample.search
 
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import sample.search.FilterState
+import sample.search.Search
+import sample.search.SearchViewModel
 
 class SearchView {
   private val viewModel = SearchViewModel()

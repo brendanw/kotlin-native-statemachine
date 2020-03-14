@@ -1,4 +1,4 @@
-package sample
+package sample.search
 
 val defaultCountryList = listOf("Australia", "Austria", "Brazil", "Canada", "China", "France", "Greece", "New Zealand", "Switzerland", "Turkey", "United States", "Venezuela")
 val exitDirectionList = listOf("north", "northeast", "east", "southeast", "south", "southwest", "west", "northwest")
@@ -14,27 +14,27 @@ class Search {
   )
 
   sealed class Action {
-    object InitializeFiltersAction : Search.Action()
-    data class FilterOptionsLoadedAction(val filterOptions: FilterOptions) : Search.Action()
+    object InitializeFiltersAction : Action()
+    data class FilterOptionsLoadedAction(val filterOptions: FilterOptions) : Action()
 
-    object TapFilterCancelBtn : Search.Action()
-    object TapOpenFilterIcon : Search.Action()
-    object BackButtonTapAction : Search.Action()
+    object TapFilterCancelBtn : Action()
+    object TapOpenFilterIcon : Action()
+    object BackButtonTapAction : Action()
 
     data class QueryChangeAction(
       val filterState: FilterState,
       val query: String
-    ) : Search.Action()
+    ) : Action()
 
     data class FilterUpdateAction(
       val filterState: FilterState,
       val query: String
-    ) : Search.Action()
+    ) : Action()
 
     data class SearchLoadedAction(
       val items: List<SearchResult>,
       val diffResult: DiffResult?
-    ) : Search.Action()
+    ) : Action()
   }
 
   enum class StateType {

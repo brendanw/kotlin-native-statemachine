@@ -1,4 +1,4 @@
-package sample
+package sample.flow
 
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview

@@ -1,4 +1,7 @@
-package sample
+package sample.view
+
+import sample.search.DiffCallback
+import sample.search.DiffResult
 
 class KDiffUtil {
   companion object {

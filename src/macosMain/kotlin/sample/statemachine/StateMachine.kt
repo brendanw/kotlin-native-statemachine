@@ -1,8 +1,11 @@
-package sample
+package sample.statemachine
 
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
+import sample.flow.FlowRelay
+import sample.multicast
 
 class StateWrapper<T>(var state: T)
 

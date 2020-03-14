@@ -1,4 +1,4 @@
-package sample
+package sample.search
 
 data class SearchResult(
   val _id: String,

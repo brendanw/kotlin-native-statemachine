@@ -1,4 +1,4 @@
-package sample
+package sample.search
 
 import kotlinx.atomicfu.AtomicRef
 import kotlinx.atomicfu.atomic
@@ -6,6 +6,8 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.filterIsInstance
 import kotlinx.coroutines.flow.map
+import sample.statemachine.StateMachine
+import sample.view.KDiffUtil
 
 class SearchStateMachine(
   scope: CoroutineScope
