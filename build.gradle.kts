@@ -1,5 +1,5 @@
 plugins {
-    id("org.jetbrains.kotlin.multiplatform").version("1.3.70")
+    id("org.jetbrains.kotlin.multiplatform").version("1.3.61")
 }
 
 repositories {
@@ -36,12 +36,12 @@ kotlin {
         // in gradle.properties file and re-import your project in IDE.
         val macosMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.4")
-                /*implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.3-native-mt") {
+                //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.4")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.3-native-mt") {
                     version {
                         strictly("1.3.3-native-mt")
                     }
-                }*/
+                }
             }
         }
         val macosTest by getting {
