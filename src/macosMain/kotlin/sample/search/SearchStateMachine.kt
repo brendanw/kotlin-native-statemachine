@@ -12,6 +12,9 @@ import sample.view.KDiffUtil
 class SearchStateMachine(
   scope: CoroutineScope
 ) {
+  init {
+    println("initializing StateMachine")
+  }
   private val stateMachine = StateMachine(
     scope = scope,
     initialState = Search.State(Search.StateType.InitialState, emptyList(), null),
@@ -21,6 +24,9 @@ class SearchStateMachine(
       ::filterDatabase
     )
   )
+  init {
+    println("initializing StateMachine finished")
+  }
   val viewState = stateMachine.viewState
   val dispatchAction = stateMachine::dispatchAction
 

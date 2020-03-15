@@ -6,14 +6,20 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.broadcast
 import sample.search.SearchView
 
+val isNativeMt = true
 
 fun main() {
-  runBlocking {
-    println("start")
+  if (isNativeMt) {
     SearchView()
 
     while (true) {
-      delay(1000)
+    }
+  } else {
+    runBlocking {
+      SearchView()
+      while(true) {
+        yield()
+      }
     }
   }
 }

@@ -37,11 +37,7 @@ kotlin {
         val macosMain by getting {
             dependencies {
                 //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.4")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.3-native-mt") {
-                    version {
-                        strictly("1.3.3-native-mt")
-                    }
-                }
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.3-native-mt")
             }
         }
         val macosTest by getting {
