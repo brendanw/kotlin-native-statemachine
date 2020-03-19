@@ -17,10 +17,6 @@ repositories {
 }
 
 kotlin {
-    // For ARM, should be changed to iosArm32 or iosArm64
-    // For Linux, should be changed to e.g. linuxX64
-    // For MacOS, should be changed to e.g. macosX64
-    // For Windows, should be changed to e.g. mingwX64
     macosX64("macos") {
         binaries {
             executable {
@@ -32,11 +28,9 @@ kotlin {
         }
     }
     sourceSets {
-        // Note: To enable common source sets please comment out 'kotlin.import.noCommonSourceSets' property
-        // in gradle.properties file and re-import your project in IDE.
         val macosMain by getting {
             dependencies {
-                //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.4")
+                //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.3")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.3-native-mt")
             }
         }
@@ -44,7 +38,3 @@ kotlin {
         }
     }
 }
-
-// Use the following Gradle tasks to run your application:
-// :runReleaseExecutableMacos - without debug symbols
-// :runDebugExecutableMacos - with debug symbols
