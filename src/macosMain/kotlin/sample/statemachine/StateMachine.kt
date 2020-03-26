@@ -20,7 +20,6 @@ class StateMachine<R : Any, T>(
 
   init {
     scope.launch {
-      println("stateMachine coroutine launched")
       val scope = this
       val lastState = StateWrapper(initialState)
       val multicaster = inputActions.multicast(scope)

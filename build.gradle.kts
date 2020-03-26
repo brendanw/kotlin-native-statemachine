@@ -1,5 +1,5 @@
 plugins {
-    id("org.jetbrains.kotlin.multiplatform").version("1.3.61")
+    id("org.jetbrains.kotlin.multiplatform").version("1.3.71")
 }
 
 repositories {
@@ -30,8 +30,8 @@ kotlin {
     sourceSets {
         val macosMain by getting {
             dependencies {
-                //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.3")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.3-native-mt")
+                //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.5")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.5-native-mt")
             }
         }
         val macosTest by getting {

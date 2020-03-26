@@ -11,8 +11,7 @@ import kotlin.coroutines.CoroutineContext
 
 class SearchViewModel : CoroutineScope {
   private val job = Job()
-  override val coroutineContext: CoroutineContext
-    get() = Dispatchers.Main + job
+  override val coroutineContext: CoroutineContext = Dispatchers.Main + job
 
   private val searchStateMachine = SearchStateMachine(this)
   val stateFlow: FlowRelay<Search.State>
