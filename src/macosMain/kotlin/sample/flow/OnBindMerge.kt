@@ -1,4 +1,4 @@
-package sample.statemachine
+package sample.flow
 
 import kotlinx.atomicfu.atomic
 import kotlinx.coroutines.InternalCoroutinesApi

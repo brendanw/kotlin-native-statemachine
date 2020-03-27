@@ -6,6 +6,7 @@ import kotlinx.coroutines.channels.BroadcastChannel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
 import sample.flow.FlowRelay
+import sample.flow.onBindMerge
 
 class OnBindStateMachine<R : Any, T>(
     val scope: CoroutineScope,
