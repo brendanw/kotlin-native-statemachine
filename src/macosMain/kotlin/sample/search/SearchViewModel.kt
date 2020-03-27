@@ -4,8 +4,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import sample.flow.FlowRelay
-import sample.search.Search
-import sample.search.SearchStateMachine
+import sample.search.list.Search
 import kotlin.coroutines.CoroutineContext
 
 

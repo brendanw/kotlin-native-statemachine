@@ -3,6 +3,8 @@ package sample.search
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import sample.search.list.FilterState
+import sample.search.list.Search
 
 class SearchView {
     init {

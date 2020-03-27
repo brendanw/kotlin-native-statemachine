@@ -1,4 +1,4 @@
-package sample.search
+package sample.search.list
 
 class SearchResultItemDiffHelper(private val newList: List<SearchResult>,
                                  private val oldList: List<SearchResult>) : DiffCallback() {

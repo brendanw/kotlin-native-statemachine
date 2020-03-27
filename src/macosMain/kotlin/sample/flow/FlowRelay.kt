@@ -10,8 +10,7 @@ import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.asFlow
 
 /**
- * This is similar to RxRelay. You can send objects to the relay as well as allow many classes to subscribe to any
- * objects that get sent to the relay.
+ * This is similar to RxRelay.
  */
 class FlowRelay<T>(capacity: Int = Channel.BUFFERED) : Flow<T> {
   @InternalCoroutinesApi

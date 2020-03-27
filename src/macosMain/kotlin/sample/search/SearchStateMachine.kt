@@ -10,6 +10,10 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 import sample.db.ExitDb
 import sample.kotlinDb
+import sample.search.list.FilterState
+import sample.search.list.Search
+import sample.search.list.SearchResult
+import sample.search.list.SearchResultItemDiffHelper
 import sample.statemachine.OnBindStateMachine
 import sample.view.KDiffUtil
 

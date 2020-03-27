@@ -1,4 +1,4 @@
-package sample.search
+package sample.search.list
 
 /**
  * Contains mapping of filter values that is consistent with what

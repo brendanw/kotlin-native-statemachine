@@ -1,7 +1,7 @@
 package sample.view
 
-import sample.search.DiffCallback
-import sample.search.DiffResult
+import sample.search.list.DiffCallback
+import sample.search.list.DiffResult
 
 class KDiffUtil {
   companion object {

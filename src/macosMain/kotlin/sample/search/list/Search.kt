@@ -1,4 +1,4 @@
-package sample.search
+package sample.search.list
 @ThreadLocal
 val defaultCountryList = listOf("Australia", "Austria", "Brazil", "Canada", "China", "France", "Greece", "New Zealand", "Switzerland", "Turkey", "United States", "Venezuela")
 @ThreadLocal
