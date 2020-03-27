@@ -6,11 +6,14 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.filterIsInstance
 import kotlinx.coroutines.flow.map
+import sample.db.ExitDb
+import sample.kotlinDb
 import sample.statemachine.StateMachine
 import sample.view.KDiffUtil
 
 class SearchStateMachine(
-  scope: CoroutineScope
+  scope: CoroutineScope,
+  private val db: ExitDb = kotlinDb
 ) {
   private val stateMachine = StateMachine(
     scope = scope,
@@ -40,7 +43,7 @@ class SearchStateMachine(
       }
 
   private suspend fun performFilterSearch(filterState: FilterState, query: String) = withContext(Dispatchers.Default) {
-    val searchResultList = emptyList<SearchResult>()
+    val searchResultList = db.getItems().map { SearchResult(name = it.name) }
     val prevList = lastList.value
     val diffResult = KDiffUtil.calculateDiff(
       SearchResultItemDiffHelper(
@@ -52,7 +55,7 @@ class SearchStateMachine(
   }
 
   private suspend fun performQuerySearch(filterState: FilterState, query: String) = withContext(Dispatchers.Default) {
-    val newList = emptyList<SearchResult>()
+    val newList = db.getItems().map { SearchResult(name = it.name) }
     val prevList = lastList.value
     val diffResult = KDiffUtil.calculateDiff(
       SearchResultItemDiffHelper(
