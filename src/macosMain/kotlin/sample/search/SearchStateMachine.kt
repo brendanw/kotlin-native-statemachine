@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.filterIsInstance
 import kotlinx.coroutines.flow.map
 import sample.db.ExitDb
 import sample.kotlinDb
+import sample.statemachine.OnBindStateMachine
 import sample.statemachine.StateMachine
 import sample.view.KDiffUtil
 
@@ -15,7 +16,7 @@ class SearchStateMachine(
   scope: CoroutineScope,
   private val db: ExitDb = kotlinDb
 ) {
-  private val stateMachine = StateMachine(
+  private val stateMachine = OnBindStateMachine(
     scope = scope,
     initialState = Search.State(Search.StateType.InitialState, emptyList(), null),
     reducer = ::reducer,
