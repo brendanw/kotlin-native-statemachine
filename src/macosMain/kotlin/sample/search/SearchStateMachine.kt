@@ -2,14 +2,15 @@ package sample.search
 
 import kotlinx.atomicfu.AtomicRef
 import kotlinx.atomicfu.atomic
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.filterIsInstance
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
 import sample.db.ExitDb
 import sample.kotlinDb
 import sample.statemachine.OnBindStateMachine
-import sample.statemachine.StateMachine
 import sample.view.KDiffUtil
 
 class SearchStateMachine(
